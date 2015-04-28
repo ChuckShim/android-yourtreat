@@ -1,6 +1,7 @@
 package com.mon.bubu.yourtreat;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -9,7 +10,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends Activity{
 
     HomeFragment homeFragment;
 
@@ -30,12 +31,11 @@ public class HomeActivity extends Activity {
                 .addTestDevice(device_id).build();              // Test Device : will be removed for production level
         mAdView.loadAd(adRequest);
 
-        // Fragment Instances
+        // Home Fragment Instance
         homeFragment = HomeFragment.newInstance();
-
         getFragmentManager().beginTransaction()
-                .add(R.id.container, homeFragment)
-                .commit();
+                            .add(R.id.container, homeFragment)
+                            .commit();
     }
 
 }

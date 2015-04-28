@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     android:gravity="center">
 
     <LinearLayout
@@ -11,11 +12,13 @@
         android:gravity="bottom">
             
         <Button
+            android:id="@+id/btn_navi_game_weather"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:text="날씨를 맞춰라"/>
 
         <Button
+            android:id="@+id/btn_navi_game_cats"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:text="범이다!!"/>
