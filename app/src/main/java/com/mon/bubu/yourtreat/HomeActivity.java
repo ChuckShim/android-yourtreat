@@ -1,7 +1,6 @@
 package com.mon.bubu.yourtreat;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -28,7 +27,8 @@ public class HomeActivity extends Activity{
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)    // Test Device : will be removed for production level
-                .addTestDevice(device_id).build();              // Test Device : will be removed for production level
+                .addTestDevice(device_id)                       // Test Device : will be removed for production level
+                .build();
         mAdView.loadAd(adRequest);
 
         // Home Fragment Instance
