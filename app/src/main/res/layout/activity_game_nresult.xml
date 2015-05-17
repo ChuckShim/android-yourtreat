@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#CC000000"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:paddingTop="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="30dp"
+        android:layout_width="320dp"
+        android:layout_height="450dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="142dp"
+                android:layout_height="79dp"
+                android:src="@drawable/game_n_card_inactive"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:layout_width="142dp"
+                android:layout_height="79dp"
+                android:src="@drawable/game_n_card_inactive"/>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="142dp"
+                android:layout_height="79dp"
+                android:src="@drawable/game_n_card_inactive"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:layout_width="142dp"
+                android:layout_height="79dp"
+                android:src="@drawable/game_n_card_inactive"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="142dp"
+                android:layout_height="79dp"
+                android:src="@drawable/game_n_card_inactive"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:layout_width="142dp"
+                android:layout_height="79dp"
+                android:src="@drawable/game_n_card_inactive"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="142dp"
+                android:layout_height="79dp"
+                android:src="@drawable/game_n_card_inactive"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:layout_width="142dp"
+                android:layout_height="79dp"
+                android:src="@drawable/game_n_card_inactive"/>
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+
+</LinearLayout>

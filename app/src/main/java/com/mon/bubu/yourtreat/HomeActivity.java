@@ -1,15 +1,15 @@
 package com.mon.bubu.yourtreat;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.mon.bubu.yourtreat.base.BaseActivity;
 
 
-public class HomeActivity extends Activity{
+public class HomeActivity extends BaseActivity{
 
     HomeFragment homeFragment;
 

@@ -12,9 +12,10 @@ import android.widget.Button;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
-    Button btn_navi_game_weather, btn_navi_game_cats;
+    Button btn_navi_game_weather, btn_navi_game_cats, btn_navi_game_n;
 
     GameCatsFragment gameCatsFragment;
+    GameNFragment gameNFragment;
 
     public HomeFragment() {}
 
@@ -37,12 +38,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         // Menu Buttons
         btn_navi_game_weather = (Button) v.findViewById(R.id.btn_navi_game_weather);
         btn_navi_game_cats = (Button) v.findViewById(R.id.btn_navi_game_cats);
+        btn_navi_game_n = (Button) v.findViewById(R.id.btn_navi_game_n);
 
         btn_navi_game_weather.setOnClickListener(this);
         btn_navi_game_cats.setOnClickListener(this);
+        btn_navi_game_n.setOnClickListener(this);
 
         // Menu Fragment Instances
         gameCatsFragment = GameCatsFragment.newInstance();
+        gameNFragment = GameNFragment.newInstance();
 
         return v;
     }
@@ -58,6 +62,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 getFragmentManager().beginTransaction()
                         .add(R.id.container, gameCatsFragment)
                         .addToBackStack("BACKSTACK_GAME_CATS")
+                        .commit();
+                break;
+            case R.id.btn_navi_game_n:
+                getFragmentManager().beginTransaction()
+                        .add(R.id.container, gameNFragment)
+                        .addToBackStack("BACKSTACK_GAME_N")
                         .commit();
                 break;
             default:
