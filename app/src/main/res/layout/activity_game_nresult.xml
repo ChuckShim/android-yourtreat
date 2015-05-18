@@ -16,84 +16,216 @@
         android:background="#FFFFFF"
         android:orientation="vertical">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:gravity="center"
             android:orientation="horizontal">
             <ImageView
+                android:id="@+id/imgGameNMoney00"
                 android:layout_width="142dp"
                 android:layout_height="79dp"
-                android:src="@drawable/game_n_card_inactive"/>
-            <View
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"/>
-            <ImageView
-                android:layout_width="142dp"
-                android:layout_height="79dp"
-                android:src="@drawable/game_n_card_inactive"/>
-            </LinearLayout>
+                android:src="@drawable/game_n_card_inactive"
+               />
 
-        <LinearLayout
+            <TextView
+                android:id="@+id/txtGameNMoney00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_alignLeft="@id/imgGameNMoney00"
+                android:layout_alignRight="@id/imgGameNMoney00"
+                android:layout_alignBottom="@id/imgGameNMoney00"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"/>
+
+            <ImageView
+                android:id="@+id/imgGameNMoney01"
+                android:layout_toRightOf="@id/txtGameNMoney00"
+                android:layout_marginLeft="15dp"
+                android:layout_width="142dp"
+                android:layout_height="79dp"
+                android:src="@drawable/game_n_card_inactive"
+                />
+
+            <TextView
+                android:id="@+id/txtGameNMoney01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_alignLeft="@id/imgGameNMoney01"
+                android:layout_alignRight="@id/imgGameNMoney01"
+                android:layout_alignBottom="@id/imgGameNMoney01"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"/>
+
+
+            </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:gravity="center"
             android:orientation="horizontal">
             <ImageView
+                android:id="@+id/imgGameNMoney02"
                 android:layout_width="142dp"
                 android:layout_height="79dp"
-                android:src="@drawable/game_n_card_inactive"/>
-            <View
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"/>
-            <ImageView
-                android:layout_width="142dp"
-                android:layout_height="79dp"
-                android:src="@drawable/game_n_card_inactive"/>
-        </LinearLayout>
+                android:src="@drawable/game_n_card_inactive"
+                />
 
-        <LinearLayout
+            <TextView
+                android:id="@+id/txtGameNMoney02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_alignLeft="@id/imgGameNMoney02"
+                android:layout_alignRight="@id/imgGameNMoney02"
+                android:layout_alignBottom="@id/imgGameNMoney02"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"/>
+
+            <ImageView
+                android:id="@+id/imgGameNMoney03"
+                android:layout_toRightOf="@id/txtGameNMoney02"
+                android:layout_marginLeft="15dp"
+                android:layout_width="142dp"
+                android:layout_height="79dp"
+                android:src="@drawable/game_n_card_inactive"
+                />
+
+            <TextView
+                android:id="@+id/txtGameNMoney03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_alignLeft="@id/imgGameNMoney03"
+                android:layout_alignRight="@id/imgGameNMoney03"
+                android:layout_alignBottom="@id/imgGameNMoney03"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:gravity="center"
             android:orientation="horizontal">
             <ImageView
+                android:id="@+id/imgGameNMoney04"
                 android:layout_width="142dp"
                 android:layout_height="79dp"
-                android:src="@drawable/game_n_card_inactive"/>
-            <View
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"/>
-            <ImageView
-                android:layout_width="142dp"
-                android:layout_height="79dp"
-                android:src="@drawable/game_n_card_inactive"/>
-        </LinearLayout>
+                android:src="@drawable/game_n_card_inactive"
+                />
 
-        <LinearLayout
+            <TextView
+                android:id="@+id/txtGameNMoney04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_alignLeft="@id/imgGameNMoney04"
+                android:layout_alignRight="@id/imgGameNMoney04"
+                android:layout_alignBottom="@id/imgGameNMoney04"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"/>
+
+            <ImageView
+                android:id="@+id/imgGameNMoney05"
+                android:layout_toRightOf="@id/txtGameNMoney04"
+                android:layout_marginLeft="15dp"
+                android:layout_width="142dp"
+                android:layout_height="79dp"
+                android:src="@drawable/game_n_card_inactive"
+                />
+
+            <TextView
+                android:id="@+id/txtGameNMoney05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_alignLeft="@id/imgGameNMoney05"
+                android:layout_alignRight="@id/imgGameNMoney05"
+                android:layout_alignBottom="@id/imgGameNMoney05"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:gravity="center"
             android:orientation="horizontal">
             <ImageView
+                android:id="@+id/imgGameNMoney06"
                 android:layout_width="142dp"
                 android:layout_height="79dp"
-                android:src="@drawable/game_n_card_inactive"/>
-            <View
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:src="@drawable/game_n_card_inactive"
+                />
+
+            <TextView
+                android:id="@+id/txtGameNMoney06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_alignLeft="@id/imgGameNMoney06"
+                android:layout_alignRight="@id/imgGameNMoney06"
+                android:layout_alignBottom="@id/imgGameNMoney06"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"/>
+
             <ImageView
+                android:id="@+id/imgGameNMoney07"
+                android:layout_toRightOf="@id/txtGameNMoney06"
+                android:layout_marginLeft="15dp"
                 android:layout_width="142dp"
                 android:layout_height="79dp"
-                android:src="@drawable/game_n_card_inactive"/>
-        </LinearLayout>
+                android:src="@drawable/game_n_card_inactive"
+                />
+
+            <TextView
+                android:id="@+id/txtGameNMoney07"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_alignLeft="@id/imgGameNMoney07"
+                android:layout_alignRight="@id/imgGameNMoney07"
+                android:layout_alignBottom="@id/imgGameNMoney07"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"/>
 
 
-        </LinearLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
 
 
 </LinearLayout>
