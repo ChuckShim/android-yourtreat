@@ -17,6 +17,14 @@ import java.util.Random;
  * Created by Chuck on 2015. 4. 28..
  */
 public class GameCatsFragment extends Fragment implements View.OnClickListener{
+    private static GameCatsFragment gameCatsInstance = null;
+    public GameCatsFragment() {}
+    public static GameCatsFragment getInstance() {
+        if(gameCatsInstance == null){
+            gameCatsInstance = new GameCatsFragment();
+        }
+        return gameCatsInstance;
+    }
 
     Integer idx_btnCats[] = {
             R.id.btnCats00, R.id.btnCats01, R.id.btnCats02, R.id.btnCats03, R.id.btnCats04,
@@ -30,12 +38,6 @@ public class GameCatsFragment extends Fragment implements View.OnClickListener{
 
     Button btnCats[];
     boolean isBtnCatsSelected[];
-
-    public GameCatsFragment() {}
-
-    public static GameCatsFragment newInstance() {
-        return new GameCatsFragment();
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,7 @@ public class GameCatsFragment extends Fragment implements View.OnClickListener{
     public void onResume()
     {
         super.onResume();
+        ((HomeActivity)this.getActivity()).setCurrentFragment(this);
         Random generator = new Random();
         tigerPosition = generator.nextInt(catsCount);
 

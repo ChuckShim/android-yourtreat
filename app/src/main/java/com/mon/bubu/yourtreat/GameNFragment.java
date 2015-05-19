@@ -14,15 +14,17 @@ import android.widget.EditText;
  * Created by Chuck on 2015. 4. 28..
  */
 public class GameNFragment extends Fragment implements View.OnClickListener{
+    private static GameNFragment gameNInstance = null;
+    public GameNFragment() {}
+    public static GameNFragment getInstance() {
+        if(gameNInstance == null){
+            gameNInstance = new GameNFragment();
+        }
+        return gameNInstance;
+    }
 
     EditText edit_game_n_amount, edit_game_n_number;
     Button btn_game_n_info, btn_game_n_home, btn_game_n_start;
-
-    public GameNFragment() {}
-
-    public static GameNFragment newInstance() {
-        return new GameNFragment();
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +53,9 @@ public class GameNFragment extends Fragment implements View.OnClickListener{
     public void onResume()
     {
         super.onResume();
+        ((HomeActivity)this.getActivity()).setCurrentFragment(this);
     }
+
 
     @Override
     public void onClick(View v){
@@ -62,8 +66,8 @@ public class GameNFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.btn_game_n_home:
                 getFragmentManager().beginTransaction()
-                        .remove(this)
-                        .commit();
+                                    .replace(R.id.container, HomeFragment.getInstance())
+                                    .commit();
                 break;
             case R.id.btn_game_n_start:
 

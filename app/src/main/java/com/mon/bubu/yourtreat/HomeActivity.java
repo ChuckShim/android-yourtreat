@@ -1,5 +1,6 @@
 package com.mon.bubu.yourtreat;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -11,7 +12,7 @@ import com.mon.bubu.yourtreat.base.BaseActivity;
 
 public class HomeActivity extends BaseActivity{
 
-    HomeFragment homeFragment;
+    private Fragment currentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +32,32 @@ public class HomeActivity extends BaseActivity{
                 .build();
         mAdView.loadAd(adRequest);
 
-        // Home Fragment Instance
-        homeFragment = HomeFragment.newInstance();
         getFragmentManager().beginTransaction()
-                            .add(R.id.container, homeFragment)
+                            .add(R.id.container, HomeFragment.getInstance())
                             .commit();
+    }
+
+    @Override
+    public void onBackPressed(){
+        if(getCurrentFragment() instanceof GameCatsFragment){
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.container, HomeFragment.getInstance())
+                    .commit();
+        }else if(getCurrentFragment() instanceof GameNFragment){
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.container, HomeFragment.getInstance())
+                    .commit();
+        }else{
+            super.onBackPressed();
+        }
+    }
+
+    protected void setCurrentFragment(Fragment fragment){
+        this.currentFragment = fragment;
+    }
+
+    protected Fragment getCurrentFragment(){
+        return this.currentFragment;
     }
 
 }
