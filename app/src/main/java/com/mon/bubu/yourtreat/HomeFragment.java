@@ -20,7 +20,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         return homeInstance;
     }
 
-    Button btn_navi_game_weather, btn_navi_game_cats, btn_navi_game_n;
+    Button btn_navi_game_weather, btn_navi_game_cats, btn_navi_game_n, btn_navi_game_shake;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,10 +37,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         btn_navi_game_weather = (Button) v.findViewById(R.id.btn_navi_game_weather);
         btn_navi_game_cats = (Button) v.findViewById(R.id.btn_navi_game_cats);
         btn_navi_game_n = (Button) v.findViewById(R.id.btn_navi_game_n);
+        btn_navi_game_shake = (Button) v.findViewById(R.id.btn_navi_game_shake);
 
         btn_navi_game_weather.setOnClickListener(this);
         btn_navi_game_cats.setOnClickListener(this);
         btn_navi_game_n.setOnClickListener(this);
+        btn_navi_game_shake.setOnClickListener(this);
 
         return v;
     }
@@ -67,6 +69,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             case R.id.btn_navi_game_n:
                 getFragmentManager().beginTransaction()
                         .replace(R.id.container, GameNFragment.getInstance())
+                        .commit();
+                break;
+            case R.id.btn_navi_game_shake:
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.container, GameShakeFragment.getInstance())
                         .commit();
                 break;
             default:

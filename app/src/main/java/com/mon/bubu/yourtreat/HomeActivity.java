@@ -43,7 +43,11 @@ public class HomeActivity extends BaseActivity{
             getFragmentManager().beginTransaction()
                     .replace(R.id.container, HomeFragment.getInstance())
                     .commit();
-        }else if(getCurrentFragment() instanceof GameNFragment){
+        }else if(getCurrentFragment() instanceof GameNFragment) {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.container, HomeFragment.getInstance())
+                    .commit();
+        }else if(getCurrentFragment() instanceof GameShakeFragment) {
             getFragmentManager().beginTransaction()
                     .replace(R.id.container, HomeFragment.getInstance())
                     .commit();
