@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.btn_navi_game_cats:
                 getFragmentManager().beginTransaction()
-                        .replace(R.id.container, GameCatsFragment.getInstance())
+                        .replace(R.id.container, GameMacaroonFragment.getInstance())
                         .commit();
                 break;
             case R.id.btn_navi_game_n:

@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+
+import com.mon.bubu.yourtreat.common.Utils;
 
 
 /**
@@ -23,6 +26,8 @@ public class GameNFragment extends Fragment implements View.OnClickListener{
         return gameNInstance;
     }
 
+    LinearLayout linearLayoutFragmentGameN;
+
     EditText edit_game_n_amount, edit_game_n_number;
     Button btn_game_n_info, btn_game_n_home, btn_game_n_start;
 
@@ -37,11 +42,13 @@ public class GameNFragment extends Fragment implements View.OnClickListener{
 
         View v = inflater.inflate(R.layout.fragment_game_n, container, false);
 
+        linearLayoutFragmentGameN = (LinearLayout) v.findViewById(R.id.linearLayoutFragmentGameN);
         edit_game_n_amount = (EditText) v.findViewById(R.id.edit_game_n_amount);
         edit_game_n_number = (EditText) v.findViewById(R.id.edit_game_n_number);
         btn_game_n_info = (Button) v.findViewById(R.id.btn_game_n_info);
         btn_game_n_home = (Button) v.findViewById(R.id.btn_game_n_home);
         btn_game_n_start = (Button) v.findViewById(R.id.btn_game_n_start);
+        linearLayoutFragmentGameN.setOnClickListener(this);
         btn_game_n_info.setOnClickListener(this);
         btn_game_n_home.setOnClickListener(this);
         btn_game_n_start.setOnClickListener(this);
@@ -61,6 +68,9 @@ public class GameNFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v){
 
         switch(v.getId()){
+            case R.id.linearLayoutFragmentGameN:
+                Utils.hideKeyboard(this.getActivity());
+                break;
             case R.id.btn_game_n_info:
 
                 break;
@@ -101,7 +111,7 @@ public class GameNFragment extends Fragment implements View.OnClickListener{
                     break;
                 }
                 if(amount > Integer.MAX_VALUE){
-                    ((HomeActivity)this.getActivity()).showAlertDialog("금액은 지나치게 많습니다. 도박은 금물!");
+                    ((HomeActivity)this.getActivity()).showAlertDialog("금액이 지나치게 많습니다. 도박은 금물!");
                     break;
                 }
                 if(number < 2 || number > 8){

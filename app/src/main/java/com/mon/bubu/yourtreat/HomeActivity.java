@@ -39,7 +39,7 @@ public class HomeActivity extends BaseActivity{
 
     @Override
     public void onBackPressed(){
-        if(getCurrentFragment() instanceof GameCatsFragment){
+        if(getCurrentFragment() instanceof GameMacaroonFragment){
             getFragmentManager().beginTransaction()
                     .replace(R.id.container, HomeFragment.getInstance())
                     .commit();

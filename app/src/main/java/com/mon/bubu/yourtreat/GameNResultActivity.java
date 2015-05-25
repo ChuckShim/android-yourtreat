@@ -27,14 +27,18 @@ public class GameNResultActivity extends BaseActivity implements View.OnClickLis
     private final int BASE_MONEY = 5;
     private final int BASE_TEN = 10;
 
-    ImageView imgMoney[];
+    ImageView imgMoney[], imgGameNClose;
     TextView txtMoney[];
     int nMoney[];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_nresult);
+        setContentView(R.layout.activity_game_n_result);
+
+        imgGameNClose = (ImageView) findViewById(R.id.imgGameNClose);
+        imgGameNClose.setOnClickListener(this);
 
         Intent intent = getIntent();
         int amount = intent.getExtras().getInt("amount");
@@ -91,10 +95,16 @@ public class GameNResultActivity extends BaseActivity implements View.OnClickLis
     }
 
     @Override
+    public void onBackPressed(){
+
+    }
+
+    @Override
     public void onClick(View v){
-
         switch(v.getId()){
-
+            case R.id.imgGameNClose:
+                finish();
+                break;
             case R.id.imgGameNMoney00:
                 displayResult(Arrays.asList(idx_imgMoney).indexOf(R.id.imgGameNMoney00));
                 break;

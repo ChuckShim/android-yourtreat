@@ -45,7 +45,7 @@
 
 
             <TextView
-                android:id="@+id/edit_game_n_amount"
+                android:id="@+id/edit_game_shake_count"
                 android:layout_width="50dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="8"
