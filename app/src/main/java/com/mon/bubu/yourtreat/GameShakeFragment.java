@@ -2,19 +2,26 @@ package com.mon.bubu.yourtreat;
 
 import android.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.mon.bubu.yourtreat.common.Constants;
+import com.mon.bubu.yourtreat.common.Utils;
+
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 /**
@@ -50,6 +57,22 @@ public class GameShakeFragment extends Fragment implements View.OnClickListener,
     private Sensor accelerometerSensor;
     private Vibrator vibe;
 
+    private final int QUIZ_NUM_OPERATORS = 2;
+    private final int QUIZ_NUM_OPERAND = 3;
+    private final int QUIZ_MAX_OPERAND = 9;
+
+    private String quizOperators[];
+    private int quizOperands[];
+
+    private int answers[];
+    private int rightPos;
+
+    private ProgressBar progressGameArithmeticTimer;
+    private TextView txtGameArithmeticTimer;
+
+    private TimerTask timerTask;
+    private Timer timer;
+    private int timeLeft;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +93,13 @@ public class GameShakeFragment extends Fragment implements View.OnClickListener,
 
         vibe = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
 
+        quizOperators = new String[QUIZ_NUM_OPERATORS];
+        quizOperands = new int[QUIZ_NUM_OPERAND];
+        answers = new int[QUIZ_NUM_OPERAND];
+
+        progressGameArithmeticTimer = (ProgressBar) v.findViewById(R.id.progressGameArithmeticTimer);
+        txtGameArithmeticTimer = (TextView) v.findViewById(R.id.txtGameArithmeticTimer);
+
         return v;
     }
 
@@ -78,8 +108,46 @@ public class GameShakeFragment extends Fragment implements View.OnClickListener,
     {
         super.onResume();
         ((HomeActivity)this.getActivity()).setCurrentFragment(this);
-    }
 
+
+        timeLeft = 30;
+        System.out.println(timeLeft);
+        txtGameArithmeticTimer.setText(Integer.toString(timeLeft));
+        progressGameArithmeticTimer.setProgress(30-timeLeft);
+
+        Runnable task = new Runnable() {
+            @Override
+            public void run() {
+                while(timeLeft > 0){
+                    try{
+                        Thread.sleep(1000);
+                    }catch(InterruptedException ex){
+
+                    }
+                    timeLeft--;
+                    System.out.println(timeLeft);
+                    handler.sendEmptyMessage(1);
+                }
+
+            }
+        };
+
+/*
+        timerTask = new TimerTask() {
+            @Override
+            public void run() {
+
+                if(timeLeft < 1){
+                    timer.cancel();
+                }
+            }
+        };
+        timer = new Timer();
+        timer.schedule(timerTask, 1000);*/
+
+        resetQuiz();
+
+    }
 
     @Override
     public void onClick(View v){
@@ -106,9 +174,6 @@ public class GameShakeFragment extends Fragment implements View.OnClickListener,
                     SensorManager.SENSOR_DELAY_GAME);
     }
 
-
-
-
     @Override
     public void onStop()
     {
@@ -116,7 +181,6 @@ public class GameShakeFragment extends Fragment implements View.OnClickListener,
         if (sensorManager != null)
             sensorManager.unregisterListener(this);
     }
-
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy){
@@ -162,6 +226,52 @@ public class GameShakeFragment extends Fragment implements View.OnClickListener,
             }
         }
     }
+
+    private void resetQuiz(){
+        Random generator = new Random();
+        for(int i=0;i<quizOperators.length;i++){
+            quizOperators[i] = Constants.getOperator(generator.nextInt(Constants.getOperatorsNum()));
+        }
+        for(int i=0;i<quizOperands.length;i++){
+            quizOperands[i] = generator.nextInt(QUIZ_MAX_OPERAND) + 1;
+        }
+
+        rightPos = generator.nextInt(QUIZ_NUM_OPERAND);
+        if(Constants.getOperatorMultiplication().equals(quizOperators[1])){
+            answers[rightPos] = Utils.doArithmetic(quizOperands[0], Utils.doArithmetic(quizOperands[1], quizOperands[2], quizOperators[1]), quizOperators[0]);
+        }else{
+            answers[rightPos] = Utils.doArithmetic(Utils.doArithmetic(quizOperands[0], quizOperands[1], quizOperators[0]), quizOperands[2], quizOperators[1]);
+        }
+
+        int variation = quizOperands[generator.nextInt(2)];
+        switch (rightPos){
+            case 0:
+                answers[rightPos+1] = answers[rightPos] + variation;
+                answers[rightPos+2] = answers[rightPos+1] + variation;
+                break;
+            case 1:
+                answers[rightPos-1] = answers[rightPos] - variation;
+                answers[rightPos+1] = answers[rightPos] + variation;
+                break;
+            case 2:
+                answers[rightPos-1] = answers[rightPos] - variation;
+                answers[rightPos-2] = answers[rightPos-1] - variation;
+                break;
+            default:
+                break;
+        }
+    }
+
+    final Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg){
+            if(msg.what == 0){
+                txtGameArithmeticTimer.setText(Integer.toString(timeLeft));
+                progressGameArithmeticTimer.setProgress(30-timeLeft);
+            }
+
+        }
+    };
 
 
 }

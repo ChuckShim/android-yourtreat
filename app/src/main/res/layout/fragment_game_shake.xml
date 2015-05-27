@@ -34,7 +34,19 @@
         android:layout_gravity="center"
         android:background="@drawable/game_n_title"/>
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/edit_game_shake_count"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="0"
+        android:textColorHint="#b2b2b2"
+        android:textColor="#515050"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:inputType="number"
+        android:gravity="right"/>
+
+    <RelativeLayout
         android:layout_marginTop="30dp"
         android:layout_width="270dp"
         android:layout_height="330dp"
@@ -44,22 +56,34 @@
 
 
 
-            <TextView
-                android:id="@+id/edit_game_shake_count"
-                android:layout_width="50dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="8"
-                android:text="0"
-                android:textColorHint="#b2b2b2"
-                android:textColor="#515050"
-                android:textSize="25sp"
-                android:singleLine="true"
-                android:inputType="number"
-                android:gravity="right"/>
+
+
+        <ProgressBar
+            android:id="@+id/progressGameArithmeticTimer"
+            android:layout_centerInParent="true"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/common_circle_progress_foreground"
+            android:background="@drawable/common_circle_progress_background"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:max="30"
+            android:progress="15"/>
+
+        <TextView
+            android:id="@+id/txtGameArithmeticTimer"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30"
+            android:textColor="#515050"
+            android:textSize="25sp"
+            android:singleLine="true"
+            android:gravity="center"/>
 
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
 </LinearLayout>
