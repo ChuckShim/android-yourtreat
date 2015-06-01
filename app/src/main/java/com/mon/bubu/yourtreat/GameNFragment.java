@@ -60,7 +60,7 @@ public class GameNFragment extends Fragment implements View.OnClickListener{
     public void onResume()
     {
         super.onResume();
-        ((HomeActivity)this.getActivity()).setCurrentFragment(this);
+        //((HomeActivity)this.getActivity()).setCurrentFragment(this);
     }
 
 
@@ -75,9 +75,7 @@ public class GameNFragment extends Fragment implements View.OnClickListener{
 
                 break;
             case R.id.btn_game_n_home:
-                getFragmentManager().beginTransaction()
-                                    .replace(R.id.container, HomeFragment.getInstance())
-                                    .commit();
+
                 break;
             case R.id.btn_game_n_start:
 

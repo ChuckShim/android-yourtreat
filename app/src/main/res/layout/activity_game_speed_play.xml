@@ -1,0 +1,132 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#CC000000"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutGameSpeedPlay"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="30dp"
+        android:layout_width="320dp"
+        android:layout_height="450dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgGameNClose"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:src="@drawable/popup_xbtn"/>
+
+
+
+        <RelativeLayout
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/imgGameSpeedClock"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/game_speed_clock"
+                />
+            <ProgressBar
+                android:id="@+id/progressGameSpeedTimer"
+                android:layout_alignTop="@id/imgGameSpeedClock"
+                android:layout_alignLeft="@id/imgGameSpeedClock"
+                android:layout_alignRight="@id/imgGameSpeedClock"
+                android:layout_alignBottom="@id/imgGameSpeedClock"
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="false"
+                android:progressDrawable="@drawable/common_circle_progress_foreground"
+                android:background="@drawable/common_circle_progress_background"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="30"
+                android:progress="0"/>
+
+            <TextView
+                android:id="@+id/txtGameSpeedTimer"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="8dp"
+                android:text="30"
+                android:textStyle="bold"
+                android:textColor="#515050"
+                android:textSize="25sp"
+                android:singleLine="true"
+                android:gravity="center"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView
+                android:id="@+id/txtGameSpeedQuestion"
+                android:layout_width="280dp"
+                android:layout_height="55dp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="35sp"
+                android:background="@drawable/game_speed_question"/>
+
+            <Button
+                android:id="@+id/btnGameSpeedFollowing00"
+                android:layout_below="@id/txtGameSpeedQuestion"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:background="@drawable/game_speed_btn_following_selector"/>
+
+            <Button
+                android:id="@+id/btnGameSpeedFollowing01"
+                android:layout_below="@id/btnGameSpeedFollowing00"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:background="@drawable/game_speed_btn_following_selector"/>
+
+            <Button
+                android:id="@+id/btnGameSpeedFollowing02"
+                android:layout_below="@id/btnGameSpeedFollowing01"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:background="@drawable/game_speed_btn_following_selector"/>
+
+            </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

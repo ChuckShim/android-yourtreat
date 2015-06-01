@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayoutFragmentGameN"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/common_bg"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="230dp"
+        android:layout_height="90dp"
+        android:layout_gravity="center"
+        android:background="@drawable/game_macaroon_title"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/introPager"
+        android:layout_width="fill_parent"
+        android:layout_height="217dp"
+        android:layout_marginTop="50dp"
+        />
+    <LinearLayout
+        android:id="@+id/introCount"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_game_n_start"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/game_n_btn_start"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_ad_game_macaroon_unit_id"/>
+
+
+</LinearLayout>

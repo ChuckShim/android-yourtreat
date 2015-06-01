@@ -5,9 +5,9 @@ package com.mon.bubu.yourtreat.common;
  */
 public class Constants {
 
-    private static final String _OPERATOR_ADDITION_ = "ADDITION";
-    private static final String _OPERATOR_SUBTRACTION_ = "SUBTRACTION";
-    private static final String _OPERATOR_MULTIPLICATION_ = "MULTIPLICATION";
+    private static final String _OPERATOR_ADDITION_ = "+";
+    private static final String _OPERATOR_SUBTRACTION_ = "-";
+    private static final String _OPERATOR_MULTIPLICATION_ = "X";
 
     private static final String _OPERATORS_[] = {_OPERATOR_ADDITION_, _OPERATOR_SUBTRACTION_, _OPERATOR_MULTIPLICATION_};
 

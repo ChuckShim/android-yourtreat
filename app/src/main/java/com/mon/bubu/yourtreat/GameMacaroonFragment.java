@@ -48,6 +48,8 @@ public class GameMacaroonFragment extends Fragment implements View.OnClickListen
 
     Vibrator vibe;
 
+    Button btn_game_n_info, btn_game_n_home;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +71,11 @@ public class GameMacaroonFragment extends Fragment implements View.OnClickListen
 
         vibe = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
 
+        btn_game_n_info = (Button) v.findViewById(R.id.btn_game_n_info);
+        btn_game_n_home = (Button) v.findViewById(R.id.btn_game_n_home);
+        btn_game_n_info.setOnClickListener(this);
+        btn_game_n_home.setOnClickListener(this);
+
         return v;
     }
 
@@ -76,7 +83,7 @@ public class GameMacaroonFragment extends Fragment implements View.OnClickListen
     public void onResume()
     {
         super.onResume();
-        ((HomeActivity)this.getActivity()).setCurrentFragment(this);
+       // ((HomeActivity)this.getActivity()).setCurrentFragment(this);
         Random generator = new Random();
         wasabiPosition = generator.nextInt(macaroonCount);
 
@@ -95,9 +102,6 @@ public class GameMacaroonFragment extends Fragment implements View.OnClickListen
 
                 break;
             case R.id.btn_game_n_home:
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.container, HomeFragment.getInstance())
-                        .commit();
                 break;
             default:
                 int buttonID = v.getId();

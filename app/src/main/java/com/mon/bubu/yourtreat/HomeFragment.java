@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     public void onResume()
     {
         super.onResume();
-        ((HomeActivity)this.getActivity()).setCurrentFragment(this);
+       // ((HomeActivity)this.getActivity()).setCurrentFragment(this);
     }
 
     @Override
@@ -62,19 +62,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
                 break;
             case R.id.btn_navi_game_cats:
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.container, GameMacaroonFragment.getInstance())
-                        .commit();
+
                 break;
             case R.id.btn_navi_game_n:
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.container, GameNFragment.getInstance())
-                        .commit();
+
                 break;
             case R.id.btn_navi_game_shake:
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.container, GameShakeFragment.getInstance())
-                        .commit();
+
                 break;
             default:
                 break;

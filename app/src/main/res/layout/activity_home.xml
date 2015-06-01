@@ -9,17 +9,79 @@
     <com.google.android.gms.ads.AdView
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id"/>
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_ad_home_unit_id"/>
 
+    <TextView
+        android:id="@+id/txt_home_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/adView"
+        android:layout_alignLeft="@id/adView"
+        android:layout_alignRight="@id/adView"
+        android:layout_alignBottom="@id/adView"
+        android:gravity="center"
+        android:text="ⓒMonLab"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
-    <FrameLayout android:id="@+id/container"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/adView"/>
+        android:background="#4BC1B3"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_above="@id/adView">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/main_title"/>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="370dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_navi_game_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_btn_weather_selector"
+                />
+
+            <Button
+                android:layout_marginTop="15dp"
+                android:id="@+id/btn_navi_game_cats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_btn_cats_selector"
+                />
+
+            <Button
+                android:layout_marginTop="15dp"
+                android:id="@+id/btn_navi_game_n"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_btn_n_selector"
+                />
+
+            <Button
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/btn_navi_game_shake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_btn_cola_selector"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
