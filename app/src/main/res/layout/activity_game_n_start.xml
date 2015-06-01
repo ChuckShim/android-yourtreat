@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayoutGameNStart"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#69d5d2"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/btn_game_n_info"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:background="@drawable/common_btn_info"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/btn_game_n_home"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:background="@drawable/common_btn_home"/>
+        </LinearLayout>
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="90dp"
+        android:layout_gravity="center"
+        android:background="@drawable/game_n_title"/>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="270dp"
+        android:layout_height="330dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/game_n_img_01"/>
+
+        <LinearLayout
+            android:layout_marginTop="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="2"/>
+
+            <EditText
+                android:id="@+id/edit_game_n_amount"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="8"
+                android:hint="1000"
+                android:textColorHint="#b2b2b2"
+                android:textColor="#515050"
+                android:textSize="25sp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:gravity="right"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="2"
+                android:src="@drawable/game_n_img_02"/>
+
+            </LinearLayout>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/game_n_img_03"/>
+
+        <LinearLayout
+            android:layout_marginTop="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="2"/>
+
+            <EditText
+                android:id="@+id/edit_game_n_number"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="8"
+                android:hint="2"
+                android:textColorHint="#b2b2b2"
+                android:textColor="#515050"
+                android:textSize="25sp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:gravity="right"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="2"
+                android:src="@drawable/game_n_img_04"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_game_n_start"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/game_n_btn_start"/>
+
+        </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"/>
+
+
+</LinearLayout>
