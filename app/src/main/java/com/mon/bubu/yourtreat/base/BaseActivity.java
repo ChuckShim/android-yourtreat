@@ -2,14 +2,9 @@ package com.mon.bubu.yourtreat.base;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.mon.bubu.yourtreat.HomeFragment;
 import com.mon.bubu.yourtreat.R;
 
 /**
@@ -23,6 +18,12 @@ public class BaseActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+    }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        overridePendingTransition(R.anim.back_in_from_left, R.anim.back_out_to_right);
     }
 
     public void showAlertDialog(String message) {

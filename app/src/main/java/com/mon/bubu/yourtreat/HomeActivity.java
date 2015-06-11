@@ -1,18 +1,26 @@
 package com.mon.bubu.yourtreat;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.mon.bubu.yourtreat.base.BaseActivity;
+import com.mon.bubu.yourtreat.common.CityManager;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.InputStream;
 
 
 public class HomeActivity extends BaseActivity implements View.OnClickListener{
@@ -25,6 +33,42 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String isJsonLoaded = mPref.getString("isJsonLoaded", "N");
+        if("N".equals(isJsonLoaded)){
+            try{
+                //CityManager.getInstance(getApplicationContext()).deleteAll();
+
+                InputStream is = getApplicationContext().getAssets().open("cities.json");
+                int size = is.available();
+                byte[] buffer = new byte[size];
+                is.read(buffer);
+                is.close();
+
+                String bufferString = new String(buffer);
+                JSONObject jsonObject = new JSONObject(bufferString);
+                JSONArray jsonArray = jsonObject.getJSONArray("cities");
+
+                int jsonSize = jsonArray.length();
+                JSONObject item;
+                for(int i=0;i<jsonSize;i++){
+                    item = jsonArray.getJSONObject(i);
+                    System.out.println(item);
+                    CityManager.getInstance(getApplicationContext()).save(item.getString("name"), item.getString("country"), item.getLong("latitude"), item.getLong("longitude"));
+                }
+
+                SharedPreferences.Editor editor = mPref.edit();
+                editor.putString("isJsonLoaded", "Y");
+                editor.commit();
+                Toast.makeText(getApplicationContext(), "도시정보 데이터가 로드되었습니다.", Toast.LENGTH_SHORT).show();
+            }catch (Exception ex){
+                ex.printStackTrace();
+                Toast.makeText(getApplicationContext(), "도시정보 데이터 로드가 실패하였습니다. 어플리케이션을 다시 실행해 주십시오.", Toast.LENGTH_SHORT).show();
+            };
+        }
+
+
 
         txt_home_company = (TextView) findViewById(R.id.txt_home_company);
 
@@ -72,19 +116,24 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
 
         switch(v.getId()){
             case R.id.btn_navi_game_weather:
-
+                intent = new Intent(this, GameWeatherStartActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.next_in_from_right, R.anim.next_out_to_left);
                 break;
             case R.id.btn_navi_game_cats:
-                intent = new Intent(this, GameMacaroonStartActivity.class);
+                intent = new Intent(this, GamePillPlayActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.next_in_from_right, R.anim.next_out_to_left);
                 break;
             case R.id.btn_navi_game_n:
                 intent = new Intent(this, GameNStartActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.next_in_from_right, R.anim.next_out_to_left);
                 break;
             case R.id.btn_navi_game_shake:
                 intent = new Intent(this, GameSpeedStartActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.next_in_from_right, R.anim.next_out_to_left);
                 break;
             default:
                 break;

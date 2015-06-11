@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#67deb3">
+
+    <com.google.android.gms.ads.AdView
+        android:layout_alignParentBottom="true"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_ad_game_macaroon_unit_id"/>
+
+    <TextView
+        android:id="@+id/txt_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/adView"
+        android:layout_alignLeft="@id/adView"
+        android:layout_alignRight="@id/adView"
+        android:layout_alignBottom="@id/adView"
+        android:gravity="center"
+        android:text="ⓒHoneyJii"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btn_info"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_width="33dp"
+        android:layout_height="45dp"
+        android:background="@drawable/common_btn_info_selector"/>
+
+    <LinearLayout
+        android:id="@+id/linear_ani"
+        android:layout_toRightOf="@id/btn_info"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:gravity="bottom|center_horizontal">
+        <ImageView
+            android:id="@+id/imgGamePillAniCat"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/common_img_cat_glass"/>
+
+        <ImageView
+            android:id="@+id/imgGamePillAniBeanDown"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:src="@drawable/common_img_bean_down"/>
+
+        <ImageView
+            android:id="@+id/imgGamePillAniBeanUp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:src="@drawable/common_img_bean_up"/>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_pill_tray"
+        android:layout_below="@id/linear_ani"
+        android:layout_marginTop="15dp"
+        android:layout_width="281dp"
+        android:layout_height="387dp"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/game_pill_img_tray">
+
+        <LinearLayout
+            android:layout_marginTop="29dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgGameMacaroon00"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon01"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon02"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon03"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgGameMacaroon04"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon05"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon06"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon07"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgGameMacaroon08"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon09"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon10"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon11"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgGameMacaroon12"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon13"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon14"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon15"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgGameMacaroon16"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon17"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon18"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon19"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgGameMacaroon20"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon21"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon22"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="31dp"/>
+            <ImageView
+                android:id="@+id/imgGameMacaroon23"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
+                android:src="@drawable/game_pill_btn_pill_yellow_selector"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_info"
+        android:layout_below="@id/btn_info"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:background="@drawable/common_info_bg"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txt_info_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#262625"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="How To Play"/>
+
+        <TextView
+            android:layout_below="@id/txt_info_title"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#262625"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:lineSpacingExtra="10dp"
+            android:text="@string/info_howtoplay_pill"/>
+
+
+        <LinearLayout
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/checkbox_info"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:button="@drawable/common_checkbox_selector"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:textColor="#262625"
+                android:textSize="12sp"
+                android:text="@string/info_dontshow"/>
+
+            </LinearLayout>
+
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="54dp"
+            android:layout_height="61dp"
+            android:src="@drawable/common_img_cat_gray"/>
+
+
+        </RelativeLayout>
+
+</RelativeLayout>

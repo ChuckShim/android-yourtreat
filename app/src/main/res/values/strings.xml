@@ -7,4 +7,6 @@
     <string name="banner_ad_game_macaroon_unit_id">ca-app-pub-8492790844346365/5225705333</string>
     <string name="banner_ad_game_n_unit_id">ca-app-pub-8492790844346365/6702438538</string>
     <string name="banner_ad_game_speed_unit_id">ca-app-pub-8492790844346365/8179171730</string>
+    <string name="info_dontshow">다시 보지 않기</string>
+    <string name="info_howtoplay_pill">1. 비타민 알약을 하나씩 먹어요\n2. 주의! 독약이 있을지도 몰라요\n3. 걸리면 니가쏴!</string>
 </resources>

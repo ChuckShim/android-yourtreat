@@ -2,6 +2,7 @@ package com.mon.bubu.yourtreat.common;
 
 import android.app.Activity;
 import android.content.Context;
+import android.net.ConnectivityManager;
 import android.view.inputmethod.InputMethodManager;
 
 /**
@@ -12,6 +13,10 @@ public class Utils {
     public static void hideKeyboard(Activity activity){
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getRootView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+    }
+
+    public static boolean isNetworkAvailable(Context context) {
+        return ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo() != null;
     }
 
     public static int doArithmetic(int a, int b, String operator){

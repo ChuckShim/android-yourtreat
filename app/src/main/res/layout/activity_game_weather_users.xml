@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#67deb3"
+    android:orientation="vertical">
+
+
+
+
+    <ImageView
+        android:layout_marginTop="130dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/game_weather_img_users"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn_game_weather_minus"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@drawable/common_btn_minus_selector"/>
+
+        <TextView
+            android:id="@+id/txt_game_weather_users"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textColor="#ffffff"
+            android:textSize="80sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_game_weather_plus"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:background="@drawable/common_btn_plus_selector"/>
+        </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_game_next"
+        android:layout_marginTop="30dp"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:background="@drawable/common_btn_next_selector"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_ad_game_weather_unit_id"/>
+
+
+</LinearLayout>
